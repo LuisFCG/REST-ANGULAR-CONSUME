@@ -8,8 +8,11 @@ export class DatosService {
 
   constructor(private http: HttpClient) { }
 
-  retornarDatos() {
-    return this.http.get("DireccionUrl");
+  URL = 'http://prueba';
+ 
+
+  retornar() {
+    return this.http.get(this.URL);
   }  
 }
 

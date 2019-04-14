@@ -1,30 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div *ngIf="datos!=null; else enproceso">
+<div *ngIf="datos!=null; else espera">
     <table border="1">
         <tr>
-            <td>Rut</td>
-            <td>Nombre</td>
-            <td>Edad</td>
+            <td>C</td>
         </tr>
-        <tr *ngFor="let dat of datos">
-            <td>{{dat.rut}}</td>
-            <td>{{dat.nombre}}</td>
-            <td>{{dat.edad}}</td>
+        <tr *ngFor="let art of datos">
+            <td>{{art.nombre}}</td>
         </tr>
     </table>
 </div>
-<ng-template #enproceso>En proceso...</ng-template>
+<ng-template #espera>Esperando datos...</ng-template>
 
 <div>
     <p>
-        Nombre:<input type="text" [(ngModel)]="buscaNombre" />
+        Cedula:<input type="text" [(ngModel)]="buscaNombre" />
     </p>
     <p><button (click)="buscar()">Buscar</button>
 
         <p>
             Rut:<input type="text" [(ngModel)]="rut" />
         </p>
-        <p>
-            Edad:<input type="text" [(ngModel)]="edad" />
-        </p>
+
 </div>

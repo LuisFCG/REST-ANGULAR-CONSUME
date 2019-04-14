@@ -13,15 +13,11 @@ export class AppComponent {
   
   buscaNombre = null;
   rut = null;
-  edad = null;
 
   constructor(private datosService: DatosService) {}
   
-
-datos2 = this.datosService.retornarDatos();
-
   ngOnInit() {
-    this.datosService.retornarDatos()
+    this.datosService.retornar()
       .subscribe( result =>  this.datos = result)
 
   }
@@ -33,17 +29,10 @@ datos2 = this.datosService.retornarDatos();
     {
       alert('Ya existe nombre');
       this.rut = this.datos[x].rut;
-      this.edad = this.datos[x].edad;
       return;
     }     
     alert("Nombre no existe");
-    
-
-    /*this.articulos.push({codigo:this.art.codigo,
-                         descripcion:this.art.descripcion,
-                         precio:this.art.precio });*/
-    //this.art.codigo=null;
-    //this.art.descripcion=null;
-    //this.art.precio=null;    
+      
   }
+
 }
